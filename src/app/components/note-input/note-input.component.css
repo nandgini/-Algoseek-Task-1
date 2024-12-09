@@ -1,0 +1,81 @@
+.note-input-container {
+  gap: 8px;
+  padding: 23px;
+  background: #d3d3d347;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.note-input {
+  width: webkit-fill-available;
+  height: 50px;
+  flex: 1;
+  padding: 8px;
+  border: 2px solid #52C8B4;
+  border-radius: 4px;
+}
+
+.note-types {
+  display: flex;
+  gap: 4px;
+}
+
+.type-button {
+  padding: 0px;
+  cursor: pointer;
+  border-radius: 15px;
+  height: 25px;
+  width: 25px;
+  border: 0.5px solid lightgrey;
+  background-color: white;
+}
+
+
+.type-button .icon {
+  font-size: 80%;
+  display: flow;
+}
+
+
+.type-button.active {
+  font-weight: bold;
+  background-color: #00c6ee;
+}
+
+.submit-button {
+  padding: 1px 7px;
+  background: #52C8B4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.activity-icon {
+  font-size: 13px;
+  position: absolute;
+  left: 63px;
+  top: 56px;
+  padding: 1px 6px;
+  cursor: pointer;
+  border-radius: 15px;
+  height: 25px;
+  width: 25px;
+  border: 0.5px solid lightgrey;
+  background-color: white;
+}
+
+.activity-icon::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  background-color: #ccc;
+  top: 101%;
+  bottom: -111px;
+  left: 53%;
+  transform: translateX(-50%);
+}
+
+.activity-icon[data-thread="false"]::after {
+  display: none; /* Hide thread when data-thread is false */
+}

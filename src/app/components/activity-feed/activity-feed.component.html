@@ -1,0 +1,26 @@
+<div class="activity-feed">
+  <div *ngFor="let note of notes$ | async" class="activity-item">
+    <span class="timestamp">{{ note.timestamp | date:'shortTime' }}</span>
+
+    <div class="activity-icon">
+      <span class="icon">{{ getTypeIcon(note.type) }}</span>
+    </div>
+    
+    <div class="activity-content">
+      <div class="activity-header">
+        <span class="user">{{ note.user }}</span>
+        <span class="action ms-2">{{ getActionText(note.type) }}
+          <span class="user">Milton RomaGuera</span>
+        </span>
+      </div>
+      <div class="activity-text">{{ note.content }}</div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="20px" viewBox="0 0 512 512" fill="currentColor" class="delete-icon"
+      (click)="deleteNote(note.id)">
+      <path
+        d="M256 448c-106 0-192-86-192-192S150 64 256 64s192 86 192 192-86 192-192 192zm65-240H191c-14.2 0-21.4 17.2-11.3 27.3l65 65c6.2 6.2 16.4 6.2 22.6 0l65-65c10.1-10.1 2.9-27.3-11.3-27.3z" />
+    </svg>
+
+  </div>
+</div>
